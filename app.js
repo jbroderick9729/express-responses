@@ -20,36 +20,32 @@ app.get('/apps', (req, res) => {
     }
 
     if(genre) {
-        if(!['Action', 'Puzzle', 'Strategy', 'Casual', 'Arcade', 'Card']) {
+        if(!['Action', 'Puzzle', 'Strategy', 'Casual', 'Arcade', 'Card'].includes(genre)) {
             return res
                 .status(400)
                 .send('Genres must be either Action, Puzzle, Strategy, Casual, Arcade, or Card!')
         }
     }
 
-    let results = playstore
-        .filter(item =>
-            item);
-
+    const results = {
+        playstore: playstore.filter(item => item),
+    };
+    
     if(sort) {
-        results
+        results.playstore
             .sort((a,b) => {
                 return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
             })
     }
-
+   
     if(genre) {
-        results
-            .filter(item => item.Genres.includes(genre) )
-    }
+            results.playstore = results.playstore.filter(item => item.Genres.includes(genre) )
+        }
 
     res
-        .json(results);
+        .json(results.playstore);
 })
 
-
-
-
-app.listen(8000, () => {
-    console.log('Server started on PORT 8000');
+app.listen(8001, () => {
+    console.log('Server started on PORT 8001');
 })
