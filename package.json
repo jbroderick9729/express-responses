@@ -1,7 +1,6 @@
 {
   "name": "express-responses",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,9 +12,19 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "nodeman": "^1.1.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.11"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbroderick9729/express-responses.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jbroderick9729/express-responses/issues"
+  },
+  "homepage": "https://github.com/jbroderick9729/express-responses#readme",
+  "description": ""
 }
